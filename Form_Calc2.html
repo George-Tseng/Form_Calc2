@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>四則運算2</title>
+	
+	<script language="Javascript">
+	function checkForm(){
+	  
+	  var op0 = document.calcform.operator;
+	  var form0 = document.calcform;
+	  var index;
+	  
+	  if(document.calcform.number1.value.length == 0) 
+	  {
+	    alert('資料未輸入');
+		form0.number1.focus();
+		return false;
+	  }
+	  if(document.calcform.number2.value.length == 0) 
+	  {
+	    alert('資料未輸入');
+		form0.number2.focus();
+		return false;
+	  }
+	  if(op0.selectedIndex == 0)
+	  {
+		alert('未選運算符號');
+        return false;	  
+	  }
+	  form0.submit();
+	}
+	</script>
+	
+  </head>
+  <body text="blue">
+  <form name="calcform" form method="post" action="Form_Calc2.php">
+    <fieldset>
+      <legend>四則運算</legend>
+      請輸入數值1：<input type="text" name="number1" size="5"><p>
+      請輸入數值2：<input type="text" name="number2" size="5"><p>
+	  運算符號：<select input type="text" name="operator" size=1>
+	    <option value="0">請選擇</option>
+		<option value="1">加</option>
+		<option value="2">減</option>
+		<option value="3">乘</option>
+		<option value="4">除</option>
+	  </select>
+	  <p>
+      <input type="button" value="傳送" onclick="checkForm();">
+      <input type="reset" value="重填">
+    </fieldset>
+  </form>
+  </body>
+</html>
