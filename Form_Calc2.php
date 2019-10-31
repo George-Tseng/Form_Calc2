@@ -7,7 +7,7 @@
   <?php
     $number1=$_POST["number1"];
     $number2=$_POST["number2"];
-	$operator=$_POST["operator"];
+	$operator=(int)$_POST["operator"];
 	
  	switch($operator){				
 	  case "1":
@@ -28,13 +28,13 @@
 		}
 	}
     
-    if($operator == "1")
+    if($operator == 1)
       	$result2=$number1+$number2;
-	if($operator == "2")
+	if($operator == 2)
       	$result2=$number1-$number2;
-	if($operator == "3")
+	if($operator == 3)
       	$result2=$number1*$number2;
-	else
+	if($operator == 4)
       	$result2=$number1/$number2;
 	
     echo "<h1>使用switch的計算結果: " . ($result) . "</h1><p>";
